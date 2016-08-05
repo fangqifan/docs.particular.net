@@ -9,11 +9,11 @@ redirects:
 
 ## Version 6
 
-The concept of unique queue suffix is extended and becomes the endpoint instance ID:
+Version 6 of NServiceBus can create an additional, uniquely addressable input queue instead of using a shared or a dedicated input queue per endpoint. The uniquely adressable input queue is required when using callbacks or when you want to address a specific endpoint instance from a set of instances. Define a custom suffix which will be used in combination with the endpoint name to make your endpoint instance uniquely adressable:
 
 snippet:UniqueQueuePerEndpointInstanceDiscriminator
 
-This is consistent across all the transports, allowing round-robin sender-side distribution of messages between scaled-out endpoint instances.
+This is consistent across all the transports.
 
 
 ## Version 5
