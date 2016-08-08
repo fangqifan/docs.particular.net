@@ -10,12 +10,14 @@ tags:
 
 ## Transactions and delivery guarantees
 
-NServiceBus Azure Service Bus transport relies on the underlying Azure Service Bus library which requires the use of the `Serializable` isolation level (the most restrictive isolation level that does not permit `dirty reads`, `phantom reads` and `non repeatable reads`; will block any reader until the writer is committed. For more information refer to [Transaction Isolation Levels Explained in Details](http://dotnetspeak.com/2013/04/transaction-isolation-levels-explained-in-details) article.
+### Versions 6 and below
 
-NServiceBus Azure Service Bus transport configuration is hard-coded to `Serializable` isolation level. Users can't override it.
+NServiceBus version 5 and below relies on transaction scopes to determine the scope, while NServiceBus Azure Service Bus transport version 6 and below relies on the underlying Azure Service Bus library which, in turn, requires the use of the `Serializable` isolation level for this transaction scope (the most restrictive isolation level that does not permit `dirty reads`, `phantom reads` and `non repeatable reads`; will block any reader until the writer is committed). For more information refer to [Transaction Isolation Levels Explained in Details](http://dotnetspeak.com/2013/04/transaction-isolation-levels-explained-in-details) article.
+
+NServiceBus Azure Service Bus transport configuration is therefore hard-coded to `Serializable` isolation level. Users can't override it.
 
 
-### Versions 6 and above
+### Versions 7 and above
 
 Azure Service Bus Transport supports `SendAtomicWithReceive`, `ReceiveOnly` and `None` levels.
 
