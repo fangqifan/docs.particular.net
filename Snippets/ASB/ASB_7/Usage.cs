@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Reflection;
 using NServiceBus;
-using NServiceBus.AzureServiceBus;
 
 class Usage
 {
@@ -53,7 +52,7 @@ class Usage
 
         var transport = endpointConfiguration.UseTransport<AzureServiceBusTransport>();
         var topology = transport.UseTopology<EndpointOrientedTopology>();
-        topology.RegisterPublisherForType("publisherName", typeof(MyMessage));
+        topology.RegisterPublisher(typeof(MyMessage), "publisherName");
 
         #endregion
     }
@@ -65,7 +64,7 @@ class Usage
         var transport = endpointConfiguration.UseTransport<AzureServiceBusTransport>();
         var topology = transport.UseTopology<EndpointOrientedTopology>();
         var messagesAssembly = Assembly.LoadFrom("path/to/assembly/containing/messages");
-        topology.RegisterPublisherForAssembly("publisherName", messagesAssembly);
+        topology.RegisterPublisher(messagesAssembly, "publisherName");
 
         #endregion
     }
@@ -77,10 +76,10 @@ class Usage
         var transport = endpointConfiguration.UseTransport<AzureServiceBusTransport>();
         var topology = transport.UseTopology<EndpointOrientedTopology>();
 
-        topology.RegisterPublisherForType("publisherName", typeof(MyMessage));
+        topology.RegisterPublisher(typeof(MyMessage), "publisherName");
         // or
         var messagesAssembly = Assembly.LoadFrom("path/to/assembly/containing/messages");
-        topology.RegisterPublisherForAssembly("publisherName", messagesAssembly);
+        topology.RegisterPublisher(messagesAssembly, "publisherName");
 
         #endregion
     }

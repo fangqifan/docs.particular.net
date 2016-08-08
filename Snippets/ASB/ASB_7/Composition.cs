@@ -1,6 +1,5 @@
 using NServiceBus;
-using NServiceBus.AzureServiceBus;
-using NServiceBus.AzureServiceBus.Addressing;
+using NServiceBus.Transport.AzureServiceBus;
 
 class Composition
 {
