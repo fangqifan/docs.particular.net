@@ -1,6 +1,9 @@
 ﻿namespace Store.Messages.Events
 {
-    public interface OrderPlaced
+    using NServiceBus;
+
+    public interface OrderPlaced :
+        IEvent
     {
         int OrderNumber { get; set; }
         string[] ProductIds { get; set; }

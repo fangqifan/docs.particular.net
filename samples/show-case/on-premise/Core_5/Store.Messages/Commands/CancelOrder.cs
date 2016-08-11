@@ -1,6 +1,9 @@
 ﻿namespace Store.Messages.Commands
 {
-    public class CancelOrder 
+    using NServiceBus;
+
+    public class CancelOrder :
+        ICommand
     {
         public int OrderNumber { get; set; }
         public string ClientId { get; set; }

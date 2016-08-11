@@ -39,22 +39,25 @@
       <HintPath>..\..\..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NServiceBus.Callbacks">
-      <HintPath>..\..\..\packages\NServiceBus.Callbacks.1.0.0-beta0001\lib\net452\NServiceBus.Callbacks.dll</HintPath>
+    <Reference Include="NServiceBus.Callbacks, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NServiceBus.Callbacks.1.0.0-beta0003\lib\net452\NServiceBus.Callbacks.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="NServiceBus.Core, Version=6.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\NServiceBus.6.0.0-beta0006\lib\net452\NServiceBus.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NServiceBus.NHibernate">
-      <HintPath>..\..\..\packages\NServiceBus.NHibernate.7.0.0-beta0004\lib\net452\NServiceBus.NHibernate.dll</HintPath>
+    <Reference Include="NServiceBus.NHibernate, Version=7.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NServiceBus.NHibernate.7.0.0-beta0005\lib\net452\NServiceBus.NHibernate.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="NServiceBus.ObjectBuilder.Autofac">
       <HintPath>..\..\..\packages\NServiceBus.Autofac.6.0.0-beta0001\lib\net452\NServiceBus.ObjectBuilder.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NServiceBus.RavenDB">
-      <HintPath>..\..\..\packages\NServiceBus.RavenDB.4.0.0-beta0005\lib\net452\NServiceBus.RavenDB.dll</HintPath>
+    <Reference Include="NServiceBus.RavenDB, Version=4.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NServiceBus.RavenDB.4.0.0-beta0006\lib\net452\NServiceBus.RavenDB.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\..\..\packages\NUnit.3.4.1\lib\net45\nunit.framework.dll</HintPath>
@@ -210,7 +213,6 @@
     <Compile Include="Transports\QueueCreation\QueueBindings.cs" />
     <Compile Include="HandlerOrdering.cs" />
     <Compile Include="Handlers\GenericAsyncHandler.cs" />
-    <Compile Include="UpgradeGuides\5to6\CustomRetryPolicy.cs" />
     <Compile Include="UpgradeGuides\5to6\EndpointNameHelper.cs" />
     <Compile Include="UpgradeGuides\5to6\EndpointNameRequired.cs" />
     <Compile Include="UpgradeGuides\5to6\EndpointStartStop.cs" />
@@ -306,8 +308,10 @@
     <Compile Include="Transports\Throughput\ConcurrencyConfiguration.cs" />
     <Compile Include="TransportTransactions.cs" />
     <Compile Include="UpgradeGuides\5to6\MsmqSubscriptionAuthorization.cs" />
-    <Compile Include="UpgradeGuides\5to6\Recoverability.cs" />
+    <Compile Include="UpgradeGuides\5to6\Recoverability\CustomRetryPolicy.cs" />
+    <Compile Include="UpgradeGuides\5to6\Recoverability\Recoverability.cs" />
     <Compile Include="UpgradeGuides\5to6\Saga.cs" />
+    <Compile Include="UpgradeGuides\5to6\SpecifyingHostId.cs" />
     <Compile Include="UpgradeGuides\5to6\UpgradeMessageHandler.cs" />
     <Compile Include="UpgradeGuides\5to6\OutgoingBehavior.cs" />
     <Compile Include="UpgradeGuides\5to6\RawSend.cs" />
@@ -324,6 +328,21 @@
     <Content Include="Encryption\Configuration\encryption.config.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Headers\Writers\HeaderWriterAuditAudit.txt" />
+    <Content Include="Headers\Writers\HeaderWriterAuditSend.txt" />
+    <Content Include="Headers\Writers\HeaderWriterDataBusConventionBody.txt" />
+    <Content Include="Headers\Writers\HeaderWriterDataBusPropertyBody.txt" />
+    <Content Include="Headers\Writers\HeaderWriterEncryptionBody.txt" />
+    <Content Include="Headers\Writers\HeaderWriterErrorError.txt" />
+    <Content Include="Headers\Writers\HeaderWriterErrorSending.txt" />
+    <Content Include="Headers\Writers\HeaderWriterReplyReplying.txt" />
+    <Content Include="Headers\Writers\HeaderWriterReplySending.txt" />
+    <Content Include="Headers\Writers\HeaderWriterReturnReturning.txt" />
+    <Content Include="Headers\Writers\HeaderWriterReturnSending.txt" />
+    <Content Include="Headers\Writers\HeaderWriterSagaReplying.txt" />
+    <Content Include="Headers\Writers\HeaderWriterSagaReplyingToOriginator.txt" />
+    <Content Include="Headers\Writers\HeaderWriterSagaSending.txt" />
+    <Content Include="Headers\Writers\HeaderWriterSagaTimeout.txt" />
     <Content Include="Recoverability\ErrorHandling\ErrorQueue.config.xml" />
     <Content Include="Recoverability\retriesLogging.txt" />
     <Content Include="Routing\EndpointMapping.config.xml" />
